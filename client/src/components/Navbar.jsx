@@ -6,7 +6,9 @@ import { setMode } from 'state'
 import profileImage from 'assets/pfp2.jpeg'
 import { AppBar, IconButton, InputBase, Toolbar, useTheme } from '@mui/material'
 
-const Navbar = () => {
+const Navbar = ({
+  isSidebarOpen, setIsSidebarOpen
+}) => {
   const dispatch = useDispatch()
   const theme = useTheme()
   return (
@@ -22,7 +24,7 @@ const Navbar = () => {
         {/* Leftside */}
 
         <FlexBetween>
-          <IconButton onClick={()=> console.log('open/close sidebar')}>
+          <IconButton onClick={()=> setIsSidebarOpen(!isSidebarOpen)}>
             <MenuIcon/>
           </IconButton>
           <FlexBetween backgroundColor={theme.palette.background.alt} borderRadius="9px" gap="3rem" p="0.1rem 1.5rem">
