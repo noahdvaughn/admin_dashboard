@@ -158,7 +158,6 @@ const Sidebar = ({
                     </Typography> 
                 </Box>
                 <SettingsOutlined sx={{ color: theme.palette.secondary[300], fontSize: "25px"}}/>
-              
             </FlexBetween>
           </Box>
         </Drawer>
