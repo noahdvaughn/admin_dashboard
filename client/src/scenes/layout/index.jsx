@@ -20,8 +20,9 @@ const Layout = () => {
       drawerWidth="250px" 
       isSidebarOpen={isSidebarOpen}
       setIsSidebarOpen={setIsSidebarOpen} />
-      <Box>
+      <Box flexGrow={1}>
         <Navbar isSidebarOpen={isSidebarOpen}
+      user={data || {}}
       setIsSidebarOpen={setIsSidebarOpen} />
         <Outlet />
       </Box>
