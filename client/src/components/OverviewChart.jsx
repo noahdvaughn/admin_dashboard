@@ -7,7 +7,6 @@ import { useGetSalesQuery } from 'state/api'
 const OverviewChart = ({isDashboard = false, view}) => {
   const theme = useTheme()
   const {data, isLoading} = useGetSalesQuery()
-  console.log(data)
 
   const [totalSalesLine, totalUnitsLine] = useMemo(()=> {
 
@@ -93,6 +92,7 @@ const OverviewChart = ({isDashboard = false, view}) => {
     }}
     yFormat=" >-.2f"
     curve="catmullRom"
+    enableArea={isDashboard}
     axisTop={null}
     axisRight={null}
     axisBottom={{
@@ -108,6 +108,7 @@ const OverviewChart = ({isDashboard = false, view}) => {
         legendPosition: 'middle'
     }}
     axisLeft={{
+      tickValues: 5,
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
